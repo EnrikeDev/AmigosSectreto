@@ -1,0 +1,1 @@
+Assets públicos de la invitación E&E.
