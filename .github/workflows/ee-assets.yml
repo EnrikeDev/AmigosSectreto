@@ -1,0 +1,29 @@
+name: Refresh E&E wedding assets
+on:
+  push:
+    paths:
+      - '.github/workflows/ee-assets.yml'
+permissions:
+  contents: write
+jobs:
+  refresh-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download wedding assets
+        run: |
+          mkdir -p wedding-site
+          curl -L --fail 'https://at.adobe.com/yrdD04eU9691YfKp' -o wedding-site/foto-1.jpg
+          curl -L --fail 'https://at.adobe.com/XSPzB1h0vxhdWsHj' -o wedding-site/foto-2.jpg
+          curl -L --fail 'https://at.adobe.com/IhBCgzGpb7nFdL3O' -o wedding-site/foto-3.jpg
+          curl -L --fail 'https://at.adobe.com/Z5KMqX6bcvntHa8Q' -o wedding-site/foto-4.jpg
+          curl -L --fail 'https://at.adobe.com/U8veUbI3aXKM3CXQ' -o wedding-site/foto-5.jpg
+          curl -L --fail 'https://at.adobe.com/QQGwQHkVp74PVwlX' -o wedding-site/foto-6.jpg
+          curl -L --fail 'https://at.adobe.com/ZSLxFiMlHBda9lgX' -o wedding-site/perfect-violin.mp3
+      - name: Commit stable assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add wedding-site
+          git commit -m 'Refresh E&E wedding photos and music' || exit 0
+          git push
