@@ -1,0 +1,32 @@
+{
+  "rewrites": [
+    {
+      "source": "/novios",
+      "destination": "/novios/index.html"
+    },
+    {
+      "source": "/novios/",
+      "destination": "/novios/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/novios",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/novios/",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
+}
