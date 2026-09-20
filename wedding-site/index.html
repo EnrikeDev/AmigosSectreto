@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eréndira & Enrique · 10.10.2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--c:#f7f3ea;--n:#10294e;--g:#b98b35;--w:#fffdf8;--green:#71856a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--c);color:var(--n);font-family:Montserrat,sans-serif;font-weight:300}
+.wrap{width:min(900px,100%);margin:auto;padding:0 22px}
+.section{padding:54px 0;text-align:center;position:relative;overflow:hidden}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+.ey{letter-spacing:.28em;text-transform:uppercase;font-size:12px;color:var(--g);font-weight:600}
+.hero h1,.section h2{font-family:'Great Vibes',cursive;font-weight:400}.hero h1{font-size:clamp(48px,10vw,88px);margin:10px 0 4px}.section h2{font-size:clamp(52px,9vw,78px);margin:8px 0 12px}
+.hero{padding:58px 0 34px;background:var(--w)}
+.mono{font-family:'Cormorant Garamond';font-size:clamp(52px,12vw,92px);letter-spacing:.08em}
+.date{font-family:'Cormorant Garamond';font-size:34px;letter-spacing:.16em;color:var(--g);font-weight:600}
+.media{aspect-ratio:3/4;max-height:680px;margin:30px auto 0;border:1px solid var(--g);position:relative;overflow:hidden;background:#eee6d7}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}
+.slide.active{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:center}.slide:nth-child(2) img{object-position:center 42%}.slide:nth-child(3) img{object-position:center 35%}.slide:nth-child(4) img{object-position:center 40%}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px auto 0;max-width:650px}
+.num{font-family:'Cormorant Garamond';font-size:42px}
+.lab{font-size:9px;letter-spacing:.2em;color:var(--g);font-weight:600}
+h2{font-size:clamp(52px,9vw,78px);margin:8px 0 12px}
+.lead{font-family:'Cormorant Garamond';font-size:25px;line-height:1.45;max-width:650px;margin:auto}
+.details{background:var(--w)}
+.line{width:80px;height:1px;background:var(--g);margin:25px auto}
+.info{font-family:'Cormorant Garamond';font-size:22px;line-height:1.55;margin-top:14px}
+.info strong{font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:15px 27px;border-radius:999px;background:var(--n);color:white;text-decoration:none;border:0;letter-spacing:.14em;text-transform:uppercase;font:500 11px Montserrat;cursor:pointer}
+.pin{color:var(--g);font-size:18px;line-height:1}
+.upload{border:1px dashed var(--g);padding:30px 18px;margin:28px auto 0;max-width:650px;background:var(--w)}
+input[type=file]{max-width:100%}
+.status{margin-top:14px;font-size:13px;line-height:1.5}
+.music{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;border:1px solid var(--g);background:rgba(247,243,234,.94);color:var(--n);z-index:10;font-size:20px}
+.foot{padding:55px 20px 75px;text-align:center}
+.foot .script{font-size:62px}
+.leaf{position:absolute;width:95px;height:150px;opacity:.55;pointer-events:none}
+.leaf:before,.leaf:after{content:"";position:absolute;background:var(--green);border-radius:100% 0 100% 0;transform:rotate(-35deg)}
+.leaf:before{width:24px;height:52px;left:28px;top:22px}
+.leaf:after{width:20px;height:44px;left:48px;top:66px;transform:rotate(25deg)}
+.leaf.left{left:8px;bottom:10px}
+.leaf.right{right:8px;top:18px;transform:scaleX(-1)}
+
+.itinerary{margin:44px auto 0;padding:30px 10px 8px;max-width:680px;border-top:1px solid rgba(185,139,53,.55)}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.event{font-family:'Cormorant Garamond';padding:0 8px;display:flex;flex-direction:column;gap:7px;position:relative}
+.event:not(:last-child):after{content:"";position:absolute;right:-7px;top:0;height:100%;width:1px;background:rgba(185,139,53,.35)}
+.event strong{font-size:28px;font-weight:500;color:var(--n)}
+.event span{font-size:21px}
+.event-icon{width:34px;height:34px;margin:0 auto 2px;color:var(--g);display:block}
+.event-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.countdown-note{font-size:23px;margin-top:8px;max-width:620px}
+.memories{margin-bottom:4px!important}
+.dress{background:var(--c);padding-top:48px}
+.dress-card{max-width:680px;margin:0 auto;padding:34px 26px;border-top:1px solid rgba(185,139,53,.55);border-bottom:1px solid rgba(185,139,53,.55)}
+.dress-title{font-family:'Cormorant Garamond';font-size:31px;font-weight:500;margin:8px 0 18px}
+.dress-copy{font-family:'Cormorant Garamond';font-size:21px;line-height:1.55;max-width:610px;margin:0 auto 16px}.dress-title{margin:0 0 22px}.dress-title .dress-label{display:block;letter-spacing:.28em;text-transform:uppercase;font:600 12px Montserrat;color:var(--g);margin-bottom:4px}.dress-title .dress-formal{display:block;font-family:'Great Vibes',cursive;font-size:58px;line-height:1;color:var(--n);font-weight:400}.gold-heart{width:34px;height:34px;margin:16px auto 0;color:var(--g)}.gold-heart svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.dress-copy:last-child{margin-bottom:0}
+.photo-title{font-family:'Cormorant Garamond';font-size:30px;font-weight:500;margin:4px 0 12px}.photo-share{font-size:clamp(52px,9vw,78px)!important;color:var(--n);margin:8px 0 12px!important}
+.botanical{position:absolute;pointer-events:none;opacity:.42;width:88px;height:170px}
+.botanical i{position:absolute;width:22px;height:54px;background:var(--green);border-radius:100% 0 100% 0}
+.botanical i:nth-child(1){left:20px;top:10px;transform:rotate(-34deg)}
+.botanical i:nth-child(2){left:46px;top:48px;transform:rotate(26deg)}
+.botanical i:nth-child(3){left:15px;top:90px;transform:rotate(-28deg)}
+.botanical.right{right:2px;top:18px;transform:scaleX(-1)}
+.botanical.left{left:2px;bottom:18px}
+
+@media(max-width:600px){
+ .section{padding:46px 0}.hero{padding-top:48px}.count{gap:4px}.num{font-size:34px}.media{aspect-ratio:3/4;max-height:none}
+ .info{font-size:21px}.leaf{width:75px;opacity:.42}.timeline{grid-template-columns:1fr;gap:20px}.event:not(:last-child):after{display:none}.event{padding-bottom:14px;border-bottom:1px solid rgba(185,139,53,.25)}
+}
+
+.hero-story{font:italic 600 clamp(25px,5vw,38px)/1.15 'Cormorant Garamond',serif;margin:0 0 14px;color:var(--g);letter-spacing:.015em}
+.hero-date-full{font:600 clamp(20px,4vw,28px)/1.25 'Cormorant Garamond',serif;color:var(--n);margin:0 0 10px;letter-spacing:.035em}
+.timeline{grid-template-columns:repeat(4,1fr)}
+.foot{border-top:1px solid rgba(185,139,53,.55);padding:48px 20px 62px}
+.foot .script{font-size:clamp(52px,9vw,78px);line-height:1;margin-bottom:12px}
+.foot-date{font:700 24px 'Cormorant Garamond',serif;color:var(--g);letter-spacing:.12em}
+.botanical-img{display:block;width:100%;height:100%;aspect-ratio:2/3;background:url("branch.webp") center/contain no-repeat}
+.garland-img{display:block;width:100%;height:100%;aspect-ratio:3/2;background:url("garland.webp") center/contain no-repeat}
+.botanical-crown .garland-img{width:min(170px,42vw);height:auto;aspect-ratio:3/2}
+.union-divider .garland-img{width:58px;height:auto;aspect-ratio:3/2}
+.leaf,.botanical{display:none!important}
+.hero,.section,.details,#fotos,.foot{position:relative;overflow:hidden}
+.hero>.wrap,.section>.wrap{position:relative;z-index:3}
+.botanical-crown{display:flex;justify-content:center;align-items:center;margin:0 auto 12px;position:relative;z-index:3;opacity:.96}
+.botanical-rail{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.botanical-piece{position:absolute;opacity:.96;filter:none}
+.botanical-piece.soft{opacity:.88}.botanical-piece.strong{opacity:1}
+.hero .botanical-piece.p1{width:128px;left:-52px;top:20px;transform:rotate(-7deg)}
+.hero .botanical-piece.p2{width:116px;right:-52px;top:355px;transform:scaleX(-1) rotate(8deg)}
+.story-sec .botanical-piece.p1{width:96px;right:-44px;top:32px;transform:scaleX(-1) rotate(-7deg)}
+.details .botanical-piece.p1{width:108px;left:-46px;top:120px;transform:rotate(7deg)}
+.details .botanical-piece.p2{width:106px;right:-46px;bottom:78px;transform:scaleX(-1) rotate(-8deg)}
+.dress .botanical-piece.p1{width:96px;right:-42px;top:68px;transform:scaleX(-1) rotate(8deg)}
+#fotos .botanical-piece.p1{width:106px;left:-44px;top:86px;transform:rotate(-7deg)}
+#fotos .botanical-piece.p2{width:110px;right:-46px;bottom:68px;transform:scaleX(-1) rotate(8deg)}
+.union-divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto 18px;color:#cda65a;position:relative;z-index:3}
+.union-divider::before,.union-divider::after{content:'';width:56px;height:1px;background:linear-gradient(90deg,transparent,#d7b86f)}
+.union-divider::after{transform:scaleX(-1)}
+.union-divider .garland-img{opacity:.94}
+.union-divider svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.2}
+@media(max-width:600px){
+ .timeline{grid-template-columns:1fr 1fr;gap:24px 10px}.event:not(:last-child):after{display:none}.event{padding-bottom:10px;border-bottom:0}
+}
+@media(min-width:700px){
+ .hero .botanical-piece.p1{width:160px;left:22px;top:22px}.hero .botanical-piece.p2{width:154px;right:26px;top:286px}
+ .story-sec .botanical-piece.p1{width:128px;right:52px;top:38px}
+ .details .botanical-piece.p1{width:132px;left:22px;top:112px}.details .botanical-piece.p2{width:132px;right:24px;bottom:64px}
+ .dress .botanical-piece.p1{width:128px;right:40px;top:28px}
+ #fotos .botanical-piece.p1{width:130px;left:20px;top:68px}#fotos .botanical-piece.p2{width:136px;right:22px;bottom:54px}
+}
+@media(max-width:600px){
+ .botanical-piece{opacity:.95}.botanical-piece.soft{opacity:.86}.botanical-piece.strong{opacity:1}
+ .hero .botanical-piece.p1{width:116px;left:-45px;top:14px}.hero .botanical-piece.p2{width:104px;right:-42px;top:330px}
+ .story-sec .botanical-piece.p1{width:90px;right:-36px;top:30px}
+ .details .botanical-piece.p1{width:98px;left:-40px;top:112px}.details .botanical-piece.p2{width:98px;right:-38px;bottom:74px}
+ .dress .botanical-piece.p1{width:90px;right:-34px;top:64px}
+ #fotos .botanical-piece.p1{width:96px;left:-38px;top:78px}#fotos .botanical-piece.p2{width:100px;right:-40px;bottom:64px}
+}
+</style>
+<link rel="stylesheet" href="branch.css">
+<link rel="stylesheet" href="garland.css">
+<style id="remove-two-oversized-botanicals">
+      .botanical-crown{display:none!important}
+      #fotos .union-divider .garland-img{display:none!important}
+    </style></head>
+<body>
+<button class="music" id="music" title="Música" aria-label="Música">♫</button>
+<audio id="bgm" loop preload="auto" autoplay playsinline><source src="https://raw.githubusercontent.com/EnrikeDev/AmigosSectreto/main/wedding-site/perfect-violin.mp3" type="audio/mpeg"></audio>
+<section class="hero"><div class="wrap"><div class="botanical-crown"><span class="garland-img" aria-hidden="true"></span></div><div class="ey">Nuestra boda</div><h1 class="script">Eréndira &amp; Enrique</h1><div class="media"><div class="slide active"><img src="https://raw.githubusercontent.com/EnrikeDev/AmigosSectreto/main/wedding-site/foto-1.jpg" alt="Eréndira y Enrique"></div><div class="slide"><img src="https://raw.githubusercontent.com/EnrikeDev/AmigosSectreto/main/wedding-site/foto-2.jpg" alt="Eréndira y Enrique"></div><div class="slide"><img src="https://raw.githubusercontent.com/EnrikeDev/AmigosSectreto/main/wedding-site/foto-4.jpg" alt="Eréndira y Enrique"></div><div class="slide"><img src="https://raw.githubusercontent.com/EnrikeDev/AmigosSectreto/main/wedding-site/foto-6.jpg" alt="Eréndira y Enrique"></div></div></div></section>
+<section class="section story-sec"><div class="botanical-rail"><div class="botanical-piece p1 soft"><span class="botanical-img"></span></div></div><div class="wrap"><div class="hero-story">El inicio de nuestra historia</div><div class="hero-date-full">10 de octubre de 2026 · 2:30 p. m.</div><div class="count"><div><div class="num" id="d">--</div><div class="lab">DÍAS</div></div><div><div class="num" id="h">--</div><div class="lab">HORAS</div></div><div><div class="num" id="m">--</div><div class="lab">MINUTOS</div></div><div><div class="num" id="s">--</div><div class="lab">SEGUNDOS</div></div></div><div class="line"></div><p class="lead countdown-note">Será un gusto compartir contigo este día tan especial.</p></div></section>
+<section class="section details"><div class="botanical-rail"><div class="botanical-piece p1 strong"><span class="botanical-img"></span></div><div class="botanical-piece p2 soft"><span class="botanical-img"></span></div></div><div class="wrap"><div class="ey">Nuestra celebración</div><h2 class="script">Acompáñanos</h2><div class="info">Blanca Estela Pavón #3<br>Col. La Forestal, Cuautepec Barrio Alto, GAM<br>C.P. 07140</div><a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Blanca+Estela+Pavon+3+La+Forestal+Cuautepec+Barrio+Alto+GAM+07140"><span class="pin">⌖</span> Cómo llegar</a><div class="itinerary"><div class="ey">Itinerario</div><div class="timeline"><div class="event"><span class="event-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10"></circle><path d="M16 10v6l4 3"></path><path d="M12 4h8"></path></svg></span><strong>2:30 PM</strong><span>Recepción</span></div><div class="event"><span class="event-icon"><svg viewBox="0 0 32 32"><path d="M7.5 7.5h7l-1.1 7.1c-.35 2.3-1.75 3.9-3.65 4.35-1.9-.45-3.3-2.05-3.65-4.35L5 7.5h2.5z"></path><path d="M9.75 19v6M6.5 25h6.5"></path><path d="M24.5 7.5h-7l1.1 7.1c.35 2.3 1.75 3.9 3.65 4.35 1.9-.45 3.3-2.05 3.65-4.35L27 7.5h-2.5z"></path><path d="M22.25 19v6M19 25h6.5"></path></svg></span><strong>3:00 PM</strong><span>Trago coqueto</span></div><div class="event"><span class="event-icon"><svg viewBox="0 0 32 32"><path d="M5 20h22"></path><path d="M8 20a8 8 0 0 1 16 0"></path><path d="M14 10a2 2 0 0 1 4 0"></path><path d="M3 24h26"></path></svg></span><strong>4:00 PM</strong><span>Comida</span></div><div class="event"><span class="event-icon"><svg viewBox="0 0 32 32"><path d="M11 8v14M11 11l11-3v11"></path><path d="M11 22c0 2-2 4-5 4s-4-1-4-3 2-4 5-4 4 1 4 3zM22 19c0 2-2 4-5 4s-4-1-4-3 2-4 5-4 4 1 4 3z"></path></svg></span><strong>5:00 PM</strong><span>Fiesta</span></div></div></div></div></section>
+<section class="section dress"><div class="botanical-rail"><div class="botanical-piece p1 soft"><span class="botanical-img"></span></div></div><div class="wrap"><div class="union-divider"><svg viewBox="0 0 32 32"><circle cx="12" cy="16" r="7"></circle><circle cx="20" cy="16" r="7"></circle></svg></div><div class="dress-card"><div class="dress-title"><span class="dress-label">Código de vestimenta</span><span class="dress-formal">Formal</span></div><p class="dress-copy">Con cariño, les pedimos reservar el color blanco para la novia, así como los tonos azul cielo y azul rey, que formarán parte de nuestra celebración.</p><p class="dress-copy">Gracias por ayudarnos a hacer de este día un momento aún más especial.</p><div class="gold-heart"><svg viewBox="0 0 32 32"><path d="M16 27S5 20.7 5 12.6C5 8.4 8.1 6 11.3 6c2 0 3.8 1 4.7 2.6C16.9 7 18.7 6 20.7 6 23.9 6 27 8.4 27 12.6 27 20.7 16 27 16 27Z"></path></svg></div></div></div></section>
+<section class="section" id="fotos"><div class="botanical-rail"><div class="botanical-piece p1 strong"><span class="botanical-img"></span></div><div class="botanical-piece p2 soft"><span class="botanical-img"></span></div></div><div class="wrap"><div class="union-divider"><span class="garland-img"></span></div><div class="ey memories">Nuestros recuerdos</div><h2 class="script photo-share">Comparte tus fotos</h2><p class="lead">Sube a nuestro álbum privado los mejores momentos de nuestro día.</p><div class="upload"><input id="files" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple><br><button class="btn" id="send">Subir fotos</button><div class="status" id="status"></div></div></div></section>
+<footer class="foot"><div class="script">Te esperamos</div><div class="foot-date">10 · 10 · 2026</div></footer>
+<script>const target=new Date('2026-10-10T14:30:00-06:00');function tick(){let x=Math.max(0,target-new Date());d.textContent=Math.floor(x/864e5);h.textContent=String(Math.floor(x/36e5)%24).padStart(2,'0');m.textContent=String(Math.floor(x/6e4)%60).padStart(2,'0');s.textContent=String(Math.floor(x/1e3)%60).padStart(2,'0')}tick();setInterval(tick,1000);let i=0,sl=[...document.querySelectorAll('.slide')];setInterval(()=>{sl[i].classList.remove('active');i=(i+1)%sl.length;sl[i].classList.add('active')},5000);send.onclick=async()=>{let fs=files.files;if(!fs.length){status.textContent='Selecciona al menos una foto.';return}if(fs.length>20){status.textContent='Puedes subir hasta 20 fotos por envío.';return}send.disabled=true;status.textContent='Subiendo tus recuerdos…';let f=new FormData();[...fs].forEach(x=>f.append('photos',x));try{let r=await fetch('https://sznsbwizgjtetjnkgfzv.supabase.co/functions/v1/guest-photo-upload',{method:'POST',body:f});let j=await r.json();if(!r.ok)throw Error(j.error||'Error');status.textContent=`¡Gracias! ${j.count} foto${j.count==1?'':'s'} enviada${j.count==1?'':'s'} a nuestro álbum privado.`;files.value=''}catch(e){status.textContent='No pudimos subirlas: '+e.message}finally{send.disabled=false}};const bgm=document.getElementById('bgm');let musicStarted=false;function startMusic(){if(!bgm||musicStarted)return;bgm.volume=.55;bgm.play().then(()=>{musicStarted=true;music.textContent='❚❚'}).catch(()=>{});}startMusic();setTimeout(startMusic,50);setTimeout(startMusic,250);['touchstart','click','scroll'].forEach(ev=>document.addEventListener(ev,startMusic,{once:true,passive:true}));music.onclick=(e)=>{e.stopPropagation();if(!bgm)return;if(bgm.paused){bgm.play().then(()=>{musicStarted=true;music.textContent='❚❚'}).catch(()=>{});}else{bgm.pause();music.textContent='♫'}};</script>
+</body></html>
