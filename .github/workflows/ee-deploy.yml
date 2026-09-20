@@ -1,0 +1,45 @@
+name: Deploy E&E wedding to existing Vercel project
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'wedding-site/**'
+      - '.github/workflows/ee-deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Vercel token
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "VERCEL_TOKEN secret is not configured in this repository."
+            exit 2
+          fi
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Deploy to the existing production project
+        working-directory: wedding-site
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+          vercel deploy --prod --yes --token="$VERCEL_TOKEN"
+
+      - name: Verify public invitation and private gallery route
+        run: |
+          sleep 8
+          curl -fsS https://erendira-enrique-boda-two.vercel.app/ > /dev/null
+          curl -fsS https://erendira-enrique-boda-two.vercel.app/novios > /dev/null
+          echo "Production verification passed."
